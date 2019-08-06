@@ -4,6 +4,17 @@ import requests
 from urllib.parse import urlparse
 from collections import OrderedDict
 
+def url_exists(url):
+  try:
+    r = requests.head(url, allow_redirects=True, timeout=5)
+    status_code = r.status_code
+    if (status_code == 404):
+      return ( False, status_code )
+    else:
+      return ( True, status_code )
+  except requests.exceptions.RequestException as e:
+    return ( False, -1 )
+
 # all the urls combined by this script will be added to this list
 urls = []
 
@@ -19,7 +30,6 @@ targets = [
 ]
 
 folders = [
-  '', # <ROOT>
   '_backup',
   'backup',
   'back_up',
@@ -141,52 +151,50 @@ extensions = [
   '.zip',
 ]
 
+print('\nPlease wait while we build the url list...\n')
+
 for target in targets:
   uri = urlparse(target['url'])
   base_url = uri.scheme + '://' + uri.netloc
-  words = []
-  words.append(uri.netloc)
-  words = words + uri.netloc.split('.')
-  words = words + target['words']
-  words = words + files
-  words = list(OrderedDict.fromkeys(words))
-  for folder in folders:
-    if (folder == ''):
-      folder_exists = True
-    else:
-      try:
-        r = requests.head(base_url + '/' + folder + '/', allow_redirects=True, timeout=5)
-        if (r.status_code == 404):
-          folder_exists = False
-        else:
-          folder_exists = True
-      except requests.exceptions.RequestException as e:
-        folder_exists = False
-    if folder_exists == False:
-      continue
-    for file in words:
-      for extension in extensions:
-        if folder == '':
-          url = base_url + '/' + file + extension
-        else:
-          url = base_url + '/' + folder + '/' + file + extension
-        urls.append(url)
+  result = url_exists(base_url)
+  if result[0] == False:
+    print('The target url \'' + base_url + '\' does not exist')
+  else:
+    words = []
+    words.append(uri.netloc)
+    words = words + uri.netloc.split('.') + target['words'] + files
+    words = list(OrderedDict.fromkeys(words))
+    for folder in [ '' ] + folders:
+      if (folder == ''):
+        folder_url = base_url + '/'
+      else:
+        folder_url = base_url + '/' + folder + '/'
+      result = url_exists(folder_url)
+      if result[0] == False:
+        continue
+      for file in words:
+        for extension in extensions:
+          url = folder_url + file + extension
+          urls.append(url)
 
-for url in urls:
-  print(url)
+    # print all urls
+    #for url in urls:
+    #  print(url)
 
-file = open('download_backup.log', 'w+')
-for url in urls:
-  try:
-    r = requests.head(url, allow_redirects=True, timeout=5)
-    print('Retrieving url:', url, '(' + str(r.status_code) + ')')
-    file.write(url + ' (' + str(r.status_code) + ')\n')
-    if (r.status_code == 200):
-      print('**********FOUND**********: ', url)
-      print()
-  except requests.exceptions.RequestException as e:
-    print('Retrieving url:', url, '(ERROR)')
-    file.write(url + ' (ERROR)\n')
+    # log file to register the http code of each url
+    file = open('download_backup.log', 'w+')
 
-print()
-print('Finished')
+    for url in urls:
+      result = url_exists(url)
+      status_code = result[1]
+      if result[0] == True:
+        print('Retrieving url:', url, '(' + str(status_code) + ')')
+        file.write(url + ' (' + str(status_code) + ')\n')
+        if (status_code == 200):
+          print('**********FOUND**********: ', url)
+          print()
+      else:
+        print('Retrieving url:', url, '(' + str(status_code) + ')')
+        file.write(url + ' (' + str(status_code) + ')\n')
+
+    print('\nFinished\n')
