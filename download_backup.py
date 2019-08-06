@@ -18,7 +18,6 @@ def url_exists(url):
 # all the urls combined by this script will be added to this list
 urls = []
 
-
 # words are optional, and they should contain all the words related to the target, such as product names, company names, etc.
 # don't use spaces in words, if you need to concatenate two or more words, use underscore or hyphen.
 targets = [
