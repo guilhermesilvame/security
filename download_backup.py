@@ -1,5 +1,14 @@
 # The purpose of this script is to find database backup files and backups of websites
 
+# Usage
+# -----
+# download_backup.py [target url] [words]
+# 
+# download_backup.py
+# download_backup.py http://example.com
+# download_backup.py http://example.com word1,word2,...
+
+import sys
 import requests
 from urllib.parse import urlparse
 from collections import OrderedDict
@@ -28,6 +37,19 @@ targets = [
   },
 ]
 
+if len(sys.argv) > 1:
+  target = sys.argv[1]
+  if len(sys.argv) == 3:
+    words = sys.argv[2].split(',')
+  else:
+    words = []
+  targets = [
+    {
+      'url' : target,
+      'words' : words,
+    },
+  ]
+    
 folders = [
   '_archive',
   'archive',
