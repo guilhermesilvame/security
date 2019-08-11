@@ -1,6 +1,6 @@
 # Security
 
-This is a collection of scripts to test your website against vulnerabilities.
+Collection of scripts to test your website against vulnerabilities.
 
 # Installation
 
@@ -50,6 +50,16 @@ Inside the security folder, type the name of a script: script.py
 # Dependencies
 
 tldextract - https://github.com/john-kurkowski/tldextract
+
+# Author
+
+guilhermecruzdev - IT Security Analyst
+
+Website: https://guilhermecruzdev.com
+
+Twitter: https://twitter.com/guilhermecruzdv
+
+Linkedin: https://linkedin.com/in/guilhermecruzdev
 
 # Donation
 

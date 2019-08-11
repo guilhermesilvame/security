@@ -2,7 +2,7 @@
 
 # Usage
 # -----
-# download_backup.py [target url] [words]
+# download_backup.py [target] [words]
 # 
 # download_backup.py
 # download_backup.py http://example.com
@@ -18,7 +18,7 @@
 # 
 # Tips
 # ----
-# run the script after midnight, go to sleep and come back in the morning.
+# run the script after midnight and come back in one hour.
 
 import sys
 import requests
