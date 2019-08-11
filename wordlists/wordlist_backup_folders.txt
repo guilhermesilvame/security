@@ -17,6 +17,8 @@ _db
 db
 _dump
 dump
+_ftp
+ftp
 _files
 files
 model
