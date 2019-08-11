@@ -7,19 +7,29 @@
 # download_backup.py
 # download_backup.py http://example.com
 # download_backup.py http://example.com word1,word2,...
+# 
+# Parameters
+# ----------
+# [target] parameter is a valid url of the target.
+# 
+# [words] parameter is optional, and it should contain one or more words separated by comma.
+# words are common names related to the target, such as product names, service names, company names, etc.
+# try not using spaces in words, if you have a composite word, replace the spaces by underscore or hyphen.
+# 
+# Tips
+# ----
+# 1) Run the script after midnight and then, come back in the morning.
 
 import sys
 import requests
 from urllib.parse import urlparse
 from collections import OrderedDict
 
-from includes.functions import url_exists
+from includes.functions import url_exists, domain_words
 
 # all the urls combined by this script will be added to this list
 urls = []
 
-# words are optional, and they should contain all the words related to the target, such as product names, company names, etc.
-# don't use spaces in words, if you need to concatenate two or more words, use underscore or hyphen.
 targets = [
   {
     'url' : 'http://example.com/',
@@ -61,7 +71,7 @@ for target in targets:
   else:
     words = []
     words.append(uri.netloc)
-    words = words + uri.netloc.split('.') + target['words'] + files
+    words = words + domain_words(uri.netloc) + target['words'] + files
     words = list(OrderedDict.fromkeys(words))
     for folder in [ '' ] + folders:
       if (folder == ''):

@@ -2,11 +2,23 @@
 
 # Usage
 # -----
-# download_dated_backup.py [target url] [words]
+# download_dated_backup.py [target] [words]
 # 
 # download_dated_backup.py
 # download_dated_backup.py http://example.com
 # download_dated_backup.py http://example.com word1,word2,...
+# 
+# Parameters
+# ----------
+# [target] parameter is a valid url of the target.
+# 
+# [words] parameter is optional, and it should contain one or more words separated by comma.
+# words are common names related to the target, such as product names, service names, company names, etc.
+# try not using spaces in words, if you have a composite word, replace the spaces by underscore or hyphen.
+# 
+# Tips
+# ----
+# 1) Run the script after midnight and then, come back in the morning.
 
 import sys
 import requests
@@ -14,13 +26,11 @@ from urllib.parse import urlparse
 from collections import OrderedDict
 from datetime import date
 
-from includes.functions import url_exists, daterange
+from includes.functions import url_exists, daterange, domain_words
 
 # all the urls combined by this script will be added to this list
 urls = []
 
-# words are optional, and they should contain all the words related to the target, such as product names, company names, etc.
-# don't use spaces in words, if you need to concatenate two or more words, use underscore or hyphen.
 targets = [
   {
     'url' : 'http://example.com/',
@@ -28,6 +38,11 @@ targets = [
     ],
   },
 ]
+
+interval = {
+  'start_date' : date(date.today().year - 10,1,1),
+  'end_date' : date.today()
+}
 
 if len(sys.argv) > 1:
   target = sys.argv[1]
@@ -62,7 +77,7 @@ for target in targets:
   else:
     words = []
     words.append(uri.netloc)
-    words = words + uri.netloc.split('.') + target['words']
+    words = words + domain_words(uri.netloc) + target['words']
     words = list(OrderedDict.fromkeys(words))
     for folder in [ '' ] + folders:
       if (folder == ''):
@@ -72,13 +87,19 @@ for target in targets:
       result = url_exists(folder_url)
       if result[0] == False:
         continue
-      start_date = date(2000,1,1)
-      end_date = date.today()
-      for dr in daterange(start_date, end_date):
+      for dr in daterange(interval['start_date'], interval['end_date']):
         for word in words:
           for extension in extensions:
             for d in dates:
               url = folder_url + word + dr.strftime(d) + extension
+              urls.append(url)
+              url = folder_url + 'backup_' + word + dr.strftime(d) + extension
+              urls.append(url)
+              url = folder_url + 'bkp_' + word + dr.strftime(d) + extension
+              urls.append(url)
+              url = folder_url + 'backup_' + dr.strftime(d) + extension
+              urls.append(url)
+              url = folder_url + 'bkp_' + dr.strftime(d) + extension
               urls.append(url)
 
     # print all urls
