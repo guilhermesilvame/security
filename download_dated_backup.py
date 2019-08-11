@@ -72,7 +72,7 @@ for target in targets:
       result = url_exists(folder_url)
       if result[0] == False:
         continue
-      start_date = date(2019,8,1)
+      start_date = date(2000,1,1)
       end_date = date.today()
       for dr in daterange(start_date, end_date):
         for word in words:
@@ -82,8 +82,8 @@ for target in targets:
               urls.append(url)
 
     # print all urls
-    for url in urls:
-      print(url)
+    #for url in urls:
+      #print(url)
 
     # log file to register the http code of each url
     log_file = open('download_dated_backup.log', 'w+')
