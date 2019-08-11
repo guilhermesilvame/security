@@ -1,8 +1,8 @@
-# security
+# Security
 
 This is a collection of scripts to test your website against vulnerabilities.
 
-# installation
+# Installation
 
 Step 1) Install Git
 
@@ -43,11 +43,11 @@ Step 4) Run the scripts
 
 Inside the security folder, type the name of a script: script.py
 
-# dependencies
+# Dependencies
 
 tldextract - https://github.com/john-kurkowski/tldextract
 
-# donation
+# Donation
 
 BTC: 1P9jN9utCcedyz66tGqWAks2Yx5iTgZQFX
 
