@@ -19,6 +19,10 @@
 # Tips
 # ----
 # 1) Run the script after midnight and then, come back in the morning.
+# 
+# Dependencies
+# ------------
+# tldextract (https://github.com/john-kurkowski/tldextract)
 
 import sys
 import requests
