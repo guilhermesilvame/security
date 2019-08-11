@@ -1,6 +1,6 @@
 # Security
 
-This is a collection of scripts to test your website against vulnerabilities.
+Collection of scripts to test your website against vulnerabilities.
 
 # Installation
 
