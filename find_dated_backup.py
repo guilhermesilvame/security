@@ -18,7 +18,7 @@
 # 
 # Dependencies
 # ------------
-# tldextract (https://github.com/john-kurkowski/tldextract)
+# tldextract - https://github.com/john-kurkowski/tldextract
 # 
 # Tips
 # ----
