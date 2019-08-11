@@ -56,8 +56,8 @@ for target in targets:
       urls.append(url)
 
     # print all urls
-    for url in urls:
-      print(url)
+    #for url in urls:
+      #print(url)
 
     # log file to register the http code of each url
     log_file = open('find_admin.log', 'w+')

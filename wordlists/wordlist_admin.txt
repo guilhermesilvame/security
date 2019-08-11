@@ -4,4 +4,5 @@ _admin
 admin
 administration
 control
+phpmyadmin
 system
