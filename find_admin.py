@@ -38,7 +38,44 @@ if len(sys.argv) == 2:
     },
   ]
 
-with open('wordlists/wordlist_admin_folders.txt') as admin_file:
+with open('wordlists/wordlist_admin.txt') as admin_file:
   admin = admin_file.read().splitlines()
           
 print('\nPlease wait while we build the url list...\n')
+
+for target in targets:
+  uri = urlparse(target['url'])
+  base_url = uri.scheme + '://' + uri.netloc
+  result = url_exists(base_url)
+  if result[0] == False:
+    print('The target url \'' + base_url + '\' does not exist')
+  else:
+    for folder in admin:
+      folder_url = base_url + '/' + folder + '/'
+      url = folder_url
+      urls.append(url)
+
+    # print all urls
+    for url in urls:
+      print(url)
+
+    # log file to register the http code of each url
+    log_file = open('find_admin.log', 'w+')
+
+    # found file
+    found_file = open('found.log', 'a+')
+
+    for url in urls:
+      result = url_exists(url)
+      status_code = result[1]
+      if result[0] == True:
+        print('Retrieving url:', url, '(' + str(status_code) + ')')
+        log_file.write(url + ' (' + str(status_code) + ')\n')
+        if (status_code != 404):
+          print('\nFOUND:', url, '\n')
+          found_file.write(url + ' (' + str(status_code) + ')\n')
+      else:
+        print('Retrieving url:', url, '(' + str(status_code) + ')')
+        log_file.write(url + ' (' + str(status_code) + ')\n')
+
+    print('\nFinished\n')

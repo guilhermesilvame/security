@@ -122,7 +122,7 @@ for target in targets:
       if result[0] == True:
         print('Retrieving url:', url, '(' + str(status_code) + ')')
         log_file.write(url + ' (' + str(status_code) + ')\n')
-        if (status_code == 200):
+        if (status_code != 404):
           print('\nFOUND:', url, '\n')
           found_file.write(url + ' (' + str(status_code) + ')\n')
       else:

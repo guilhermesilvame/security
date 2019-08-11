@@ -1,0 +1,7 @@
+_adm
+adm
+_admin
+admin
+administration
+control
+system
