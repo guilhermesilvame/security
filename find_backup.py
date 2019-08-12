@@ -74,7 +74,7 @@ for target in targets:
     words = words + domain_words(uri.netloc) + target['words'] + files
     words = list(OrderedDict.fromkeys(words))
     for folder in [ '' ] + folders:
-      if (folder == ''):
+      if folder == '':
         folder_url = base_url + '/'
       else:
         folder_url = base_url + '/' + folder + '/'
@@ -102,11 +102,11 @@ for target in targets:
       if result[0] == True:
         print('Retrieving url:', url, '(' + str(status_code) + ')')
         log_file.write(url + ' (' + str(status_code) + ')\n')
-        if (status_code != 404):
-          print('\nFOUND:', url, '\n')
-          found_file.write(url + ' (' + str(status_code) + ')\n')
       else:
         print('Retrieving url:', url, '(' + str(status_code) + ')')
         log_file.write(url + ' (' + str(status_code) + ')\n')
+      if status_code != 404 and status_code != -1:
+        print('\nFOUND:', url, '\n')
+        found_file.write(url + ' (' + str(status_code) + ')\n')
 
     print('\nFinished\n')

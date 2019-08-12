@@ -10,7 +10,7 @@ def url_exists(url):
   try:
     r = requests.head(url, allow_redirects=True, timeout=5)
     status_code = r.status_code
-    if (status_code == 404):
+    if status_code == 404:
       return ( False, status_code )
     else:
       return ( True, status_code )
