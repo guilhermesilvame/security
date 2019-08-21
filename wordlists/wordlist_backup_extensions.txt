@@ -1,3 +1,4 @@
+.7z
 .backup
 .bak
 .bkp
