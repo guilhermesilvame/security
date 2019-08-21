@@ -15,7 +15,9 @@
 .db3
 .dbf
 .dbs
+.dll
 .dump
+.exe
 .fdb
 .frm
 .gdb
