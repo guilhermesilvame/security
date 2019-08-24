@@ -112,7 +112,7 @@ for target in targets:
       #print(url)
 
     # log file to register the http code of each url
-    log_file = open('find_dated_backup.log', 'w+')
+    log_file = open('logs/find_dated_backup.log', 'w+')
 
     for url in urls:
       result = url_exists(url)
@@ -127,7 +127,7 @@ for target in targets:
       if status_code in range(200, 300) and content_type[0:9] != 'text/html':
         # found file
         print('\nFOUND:', url, '\n')
-        found_file = open('found.log', 'a+')
+        found_file = open('logs/found.log', 'a+')
         found_file.write(url + ' (' + str(status_code) + ')\n')
         found_file.close()
   
