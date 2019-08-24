@@ -1,3 +1,4 @@
+.7z
 .backup
 .bak
 .bkp
@@ -14,7 +15,9 @@
 .db3
 .dbf
 .dbs
+.dll
 .dump
+.exe
 .fdb
 .frm
 .graphql
