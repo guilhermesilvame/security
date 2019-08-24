@@ -2,10 +2,10 @@
 
 # Usage
 # -----
-# download_admin.py [target]
+# find_admin.py [target]
 # 
-# download_admin.py
-# download_admin.py http://example.com
+# find_admin.py
+# find_admin.py http://example.com
 # 
 # Parameters
 # ----------

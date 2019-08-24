@@ -13,6 +13,7 @@
 .dump
 .fdb
 .frm
+.graphql
 .gdb
 .ibd
 .json

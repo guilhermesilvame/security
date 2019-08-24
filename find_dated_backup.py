@@ -2,11 +2,11 @@
 
 # Usage
 # -----
-# download_dated_backup.py [target] [words]
+# find_dated_backup.py [target] [words]
 # 
-# download_dated_backup.py
-# download_dated_backup.py http://example.com
-# download_dated_backup.py http://example.com word1,word2,...
+# find_dated_backup.py
+# find_dated_backup.py http://example.com
+# find_dated_backup.py http://example.com word1,word2,...
 # 
 # Parameters
 # ----------

@@ -1,0 +1,6 @@
+.zip
+.rar
+.bak
+.bkp
+.tar.gz
+.tar

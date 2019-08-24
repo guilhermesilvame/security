@@ -17,6 +17,7 @@
 .dump
 .fdb
 .frm
+.graphql
 .gdb
 .ibd
 .inc
