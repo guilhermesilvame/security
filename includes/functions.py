@@ -7,10 +7,14 @@ def daterange(start_date, end_date):
     yield start_date + timedelta(n)
 
 def url_exists(url):
+  print(url)
   try:
     r = requests.head(url, allow_redirects=True, timeout=20)
     status_code = r.status_code
-    content_type = r.headers['Content-Type']
+    if ('Content-Type' in r.headers):
+      content_type = r.headers['Content-Type']
+    else:
+      content_type = ''
     if status_code == 404:
       return ( False, status_code, content_type )
     else:
