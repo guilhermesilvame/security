@@ -62,9 +62,6 @@ for target in targets:
     # log file to register the http code of each url
     log_file = open('find_admin.log', 'w+')
 
-    # found file
-    found_file = open('found.log', 'a+')
-
     for url in urls:
       result = url_exists(url)
       status_code = result[1]
@@ -75,7 +72,10 @@ for target in targets:
         print('Retrieving url:', url, '(' + str(status_code) + ')')
         log_file.write(url + ' (' + str(status_code) + ')\n')
       if status_code != 404 and status_code != -1:
+        # found file
         print('\nFOUND:', url, '\n')
+        found_file = open('found.log', 'a+')
         found_file.write(url + ' (' + str(status_code) + ')\n')
+        found_file.close()
   
     print('\nFinished\n')

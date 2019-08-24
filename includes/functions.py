@@ -8,14 +8,22 @@ def daterange(start_date, end_date):
 
 def url_exists(url):
   try:
-    r = requests.head(url, allow_redirects=True, timeout=5)
+    r = requests.head(url, allow_redirects=True, timeout=20)
     status_code = r.status_code
+    content_type = r.headers['Content-Type']
     if status_code == 404:
-      return ( False, status_code )
+      return ( False, status_code, content_type )
     else:
-      return ( True, status_code )
+      return ( True, status_code, content_type )
   except requests.exceptions.RequestException:
-    return ( False, -1 )
+    return ( False, -1, '' )
+
+def load_url(url):
+  try:
+    r = requests.get(url, allow_redirects=True, timeout=20)
+    return r.content.decode('utf-8').split('\n')
+  except requests.exceptions.RequestException:
+    return []
 
 def domain_words(domain):
   domain_parts = tldextract.extract(domain)
@@ -26,3 +34,6 @@ def domain_words(domain):
     if 'www' + str(i) in domain_words:
       domain_words.remove('www' + str(i))
   return domain_words
+
+def sanitize_list(string_list):
+  return list(filter(None, string_list))
