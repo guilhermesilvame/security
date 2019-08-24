@@ -124,7 +124,7 @@ for target in targets:
       else:
         print('Retrieving url:', url, '(' + str(status_code) + ')')
         log_file.write(url + ' (' + str(status_code) + ')\n')
-      if status_code != 404 and status_code != -1 and content_type[0:9] != 'text/html':
+      if status_code in range(200, 300) and content_type[0:9] != 'text/html':
         # found file
         print('\nFOUND:', url, '\n')
         found_file = open('found.log', 'a+')
