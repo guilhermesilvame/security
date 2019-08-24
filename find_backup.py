@@ -25,7 +25,7 @@ import requests
 from urllib.parse import urlparse
 from collections import OrderedDict
 
-from includes.functions import url_exists, domain_words
+from includes.functions import url_exists, domain_words, sanitize_list
 
 # all the urls combined by this script will be added to this list
 urls = []
@@ -72,6 +72,7 @@ for target in targets:
     words = []
     words.append(uri.netloc)
     words = words + domain_words(uri.netloc) + target['words'] + files
+    words = sanitize_list(words)
     words = list(OrderedDict.fromkeys(words))
     for folder in [ '' ] + folders:
       if folder == '':

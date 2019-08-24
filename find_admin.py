@@ -19,7 +19,7 @@ import requests
 from urllib.parse import urlparse
 from collections import OrderedDict
 
-from includes.functions import url_exists
+from includes.functions import url_exists, sanitize_list
 
 # all the urls combined by this script will be added to this list
 urls = []
