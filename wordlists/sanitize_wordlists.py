@@ -11,7 +11,10 @@ for r, d, f in os.walk(path):
       wordlists.append(os.path.join(r, file))
 
 for wordlist in wordlists:
-  print('Sanitizing ' + os.path.basename(wordlist))
+  message = '\nSanitizing ' + os.path.basename(wordlist)
+  if wordlist.endswith('_unordered.txt'):
+    message += ' (Unordered wordlist)'
+  print(message)
   wordlist_sanitized = wordlist + '.tmp'
   lines = []
   tmpfile = open(wordlist_sanitized, "w")
@@ -19,7 +22,6 @@ for wordlist in wordlists:
     if line.strip() != '' and line.strip() not in lines:
       lines.append(line.strip() + '\n')
   if wordlist.endswith('_unordered.txt'):
-    print('Unordered wordlist')
     tmpfile.writelines(lines)
   else:
     tmpfile.writelines(sorted(lines))
