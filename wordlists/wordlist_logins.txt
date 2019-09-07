@@ -121,8 +121,6 @@ anonymous
 answer
 antonia
 antonio
-ant�nia
-ant�nio
 any
 ap
 apache
@@ -293,7 +291,6 @@ catalogo
 catalogs
 catch
 caua
-cau�
 cc
 ccms
 ccp14admin
@@ -478,7 +475,6 @@ demo
 demo8
 demo9
 demonstracao
-demonstra��o
 demos
 deny
 deploy
@@ -595,7 +591,6 @@ esquema
 established
 estagiario
 estagio
-estagi�rio
 estatisticas
 estoque
 estoreuser
@@ -818,7 +813,6 @@ info
 informatica
 information
 informix
-inform�tica
 ingres
 ingress
 ini
@@ -828,7 +822,6 @@ instadmin
 instagram
 instalacao
 instalador
-instala��o
 install
 install_admin
 installation
@@ -877,8 +870,6 @@ john
 join
 jones
 jose
-jos�
-jo�o
 jrun
 js
 jsp
@@ -891,9 +882,6 @@ julia
 jupiter
 juridica
 jward
-j�lia
-j�piter
-kau�
 keep
 kept
 kernel
@@ -912,7 +900,6 @@ ldap
 left
 leonardo
 leticia
-let�cia
 level
 lib
 librarian
@@ -962,10 +949,7 @@ luiz
 luiza
 lula
 luzia
-lu�z
-lu�za
 lynx
-l�via
 macadmin
 magic
 mail
@@ -1082,7 +1066,6 @@ my
 my-sql
 myadmin
 mysql
-m�rcia
 names
 navigation
 navsiteadmin
@@ -1118,7 +1101,6 @@ nume_utilizator
 numero
 nuucp
 nxpgsql
-n�colas
 oaihub902
 oas_public
 object
@@ -1207,7 +1189,6 @@ ozs
 pa
 pad
 padrao
-padr�o
 page
 pages
 painel
@@ -1229,7 +1210,6 @@ pastas
 path
 patricia
 patrol
-patr�cia
 paul
 paulo
 pdf
@@ -1269,7 +1249,6 @@ plex
 pls
 plsql
 plutao
-plut�o
 plx
 pm
 pmi
@@ -1322,7 +1301,6 @@ prod
 producao
 production
 products
-produ��o
 professor
 profile
 program
@@ -1356,7 +1334,6 @@ pw
 pwd
 pws
 python
-p�blico
 qa
 qdba
 qp
@@ -1387,7 +1364,6 @@ rebeca
 rebecca
 recover
 recuperacao
-recupera��o
 redir
 redirect
 reference
@@ -1490,7 +1466,6 @@ service
 serviceconsumer1
 services
 servicos
-servi�os
 servlet
 servlets
 sessao
@@ -1631,7 +1606,6 @@ tech
 tecnico
 tecnicos
 tecnologo
-tecn�logo
 telegram
 temp
 template
@@ -1689,7 +1663,6 @@ turbine
 tutorial
 twitter
 typo3
-t�cnico
 udadmin
 uddi
 uddisys
@@ -1768,18 +1741,15 @@ viewer
 views
 vif_developer
 vinicius
-vin�cius
 virtual
 viruser
 visitor
 vitor
 vitoria
-vit�ria
 vmailadmin
 vpd_admin
 vpn
 vrr1
-v�tor
 w
 w3
 w3c
