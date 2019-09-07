@@ -11,8 +11,15 @@ for r, d, f in os.walk(path):
       wordlists.append(os.path.join(r, file))
 
 for wordlist in wordlists:
+  if os.path.basename(wordlist) in [
+    'wordlist_birthday.txt',
+    'wordlist_birthday_extended.txt',
+    'wordlist_birthday_dmy.txt',
+    'wordlist_birthday_dmy_extended.txt',
+  ]:
+    continue
   message = '\nSanitizing ' + os.path.basename(wordlist)
-  if wordlist.endswith('_unordered.txt'):
+  if os.path.basename(wordlist).endswith('_unordered.txt'):
     message += ' (Unordered wordlist)'
   print(message)
   wordlist_sanitized = wordlist + '.tmp'
