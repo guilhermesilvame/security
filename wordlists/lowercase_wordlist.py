@@ -14,7 +14,7 @@ wordlist_lowercase = wordlist + '.tmp'
 lines = []
 tmpfile = open(wordlist_lowercase, "w")
 for line in open(wordlist, "r"):
-  if line.strip() != '' and line.strip() not in lines:
+  if line.strip() != '' and line.strip().lower() + '\n' not in lines:
     lines.append(line.strip().lower() + '\n')
 tmpfile.writelines(lines)
 tmpfile.close()

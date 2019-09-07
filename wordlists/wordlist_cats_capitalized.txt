@@ -20,7 +20,6 @@ Catie
 Cedar
 Charlie
 Chase
-Chase
 Chester
 Chewy
 Chico
@@ -47,7 +46,6 @@ Felix
 Finn
 Fiona
 Frankie
-George
 George
 Ginger
 Gizmo

@@ -26,7 +26,7 @@ for wordlist in wordlists:
   lines = []
   tmpfile = open(wordlist_sanitized, "w")
   for line in open(wordlist, "r"):
-    if line.strip() != '' and line.strip() not in lines:
+    if line.strip() != '' and line.strip() + '\n' not in lines:
       lines.append(line.strip() + '\n')
   if wordlist.endswith('_unordered.txt'):
     tmpfile.writelines(lines)
