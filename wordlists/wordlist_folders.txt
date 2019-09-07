@@ -150,7 +150,7 @@ Demo
 Log
 Logs
 Logs-Apache
-Mercado Médico
+Mercado MÃ©dico
 New Folder
 Nova Pasta
 PRUEBA
@@ -3613,7 +3613,7 @@ seattle
 sec
 seccio
 seccion
-secció
+secciÃ³
 secret
 secreto
 secrets
