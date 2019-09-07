@@ -62,15 +62,23 @@ for target in targets:
     # log file to register the http code of each url
     log_file = open('logs/find_admin.log', 'w+')
 
+    exclusion_list = []
+
     for url in urls:
+      uri = urlparse(url)
+      if uri.netloc in exclusion_list:
+        continue
       result = url_exists(url)
       status_code = result[1]
+      content_type = result[2]
       if result[0] == True:
         print('Retrieving url:', url, '(' + str(status_code) + ')')
         log_file.write(url + ' (' + str(status_code) + ')\n')
       else:
         print('Retrieving url:', url, '(' + str(status_code) + ')')
         log_file.write(url + ' (' + str(status_code) + ')\n')
+      if status_code == -1:
+        exclusion_list.append(uri.netloc)
       if status_code != 404 and status_code != -1:
         # found file
         print('\nFOUND:', url, '\n')

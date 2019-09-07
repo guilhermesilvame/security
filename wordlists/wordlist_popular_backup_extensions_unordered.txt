@@ -1,6 +1,6 @@
 .zip
 .rar
-.bak
-.bkp
 .tar.gz
 .tar
+.bak
+.bkp

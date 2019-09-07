@@ -20,8 +20,8 @@
 .exe
 .fdb
 .frm
-.graphql
 .gdb
+.graphql
 .ibd
 .inc
 .inf

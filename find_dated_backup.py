@@ -114,7 +114,12 @@ for target in targets:
     # log file to register the http code of each url
     log_file = open('logs/find_dated_backup.log', 'w+')
 
+    exclusion_list = []
+
     for url in urls:
+      uri = urlparse(url)
+      if uri.netloc in exclusion_list:
+        continue
       result = url_exists(url)
       status_code = result[1]
       content_type = result[2]
@@ -124,6 +129,8 @@ for target in targets:
       else:
         print('Retrieving url:', url, '(' + str(status_code) + ')')
         log_file.write(url + ' (' + str(status_code) + ')\n')
+      if status_code == -1:
+        exclusion_list.append(uri.netloc)
       if status_code in range(200, 300) and content_type[0:9] != 'text/html':
         # found file
         print('\nFOUND:', url, '\n')
