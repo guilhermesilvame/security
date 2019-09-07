@@ -51,6 +51,36 @@ Inside the security folder, type the name of a script: script.py
 
 tldextract - https://github.com/john-kurkowski/tldextract
 
+# Wordlists
+
+Wordlist |
+-------- |
+[wordlist_admin.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_admin.txt)
+[wordlist_backup_dates.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_backup_dates.txt)
+[wordlist_backup_extensions.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_backup_extensions.txt)
+[wordlist_backup_files.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_backup_files.txt)
+[wordlist_backup_folders.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_backup_folders.txt)
+[wordlist_birthday.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_birthday.txt)
+[wordlist_birthday_dmy.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_birthday_dmy.txt)
+[wordlist_birthday_dmy_extended.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_birthday_dmy_extended.txt)
+[wordlist_birthday_extended.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_birthday_extended.txt)
+[wordlist_cats.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_cats.txt)
+[wordlist_cats_capitalized.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_cats_capitalized.txt)
+[wordlist_colors.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_colors.txt)
+[wordlist_dated_backup_extensions.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_dated_backup_extensions.txt)
+[wordlist_files.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_files.txt)
+[wordlist_folders.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_folders.txt)
+[wordlist_ftp_logins.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_ftp_logins.txt)
+[wordlist_ftp_passwords.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_ftp_passwords.txt)
+[wordlist_logins.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_logins.txt)
+[wordlist_passwords.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_passwords.txt)
+[wordlist_passwords_large.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_passwords_large.txt)
+[wordlist_passwords_prefixes.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_passwords_prefixes.txt)
+[wordlist_passwords_suffixes.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_passwords_suffixes.txt)
+[wordlist_passwords_suffixes_large.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_passwords_suffixes_large.txt)
+[wordlist_popular_backup_extensions_unordered.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_popular_backup_extensions_unordered.txt)
+[wordlist_wireless.txt](https://raw.githubusercontent.com/guilhermecruzdev/security/master/wordlists/wordlist_wireless.txt)
+
 # Author
 
 guilhermecruzdev - IT Security Analyst
@@ -62,6 +92,8 @@ Twitter: https://twitter.com/guilhermecruzdv
 Linkedin: https://linkedin.com/in/guilhermecruzdev
 
 # Donation
+
+Donations are very welcome. Thank you.
 
 BTC: 1P9jN9utCcedyz66tGqWAks2Yx5iTgZQFX
 
