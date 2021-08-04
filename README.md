@@ -83,13 +83,13 @@ Wordlist |
 
 # Author
 
-guilhermecruzdev - IT Security Analyst
+guilhermesilvame - Ethical Hacker | Pentester
 
-Website: https://guilhermecruzdev.com
+Website: https://guilhermesilva.me
 
-Twitter: https://twitter.com/guilhermecruzdv
+Twitter: https://twitter.com/guilhermes09
 
-Linkedin: https://linkedin.com/in/guilhermecruzdev
+Linkedin: https://linkedin.com/in/guilhermesilvame
 
 # Donation
 
